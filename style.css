@@ -1,0 +1,25 @@
+#sometxt{
+    width: 90%;
+    padding:8px;
+}
+.container{
+    width: 1200px;
+    margin: auto;
+}
+#table{
+width: 50%;
+}
+table{
+    text-align: center;
+}
+#add {
+	padding: 9px;
+	margin-bottom: 7px;
+}
+#add1 {
+	padding:10px;
+    padding-left: 19px;
+    padding-right:  19px;
+    font-size: 20px;
+	margin-bottom: 7px;
+}

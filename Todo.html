@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  
+</style>
+<body>
+    <div class="container">
+    <h1 style="text-align:center ;"class="mb-5">
+        To Do List
+    </h1>
+    <div id="from"class="text-center">
+    <input type="text"id="sometxt">
+    <button type="button" class="btn btn-danger"id="add">Add Item</button></div>
+    <div id="table_section">
+<table class="table mt-5"id="table-container">
+    <thead>
+      <tr>
+        
+        <th colspan="2">Name</th>
+        <th colspan="2">Description</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-danger d-block mx-auto"id="add1">Clear All</button></div>
+
+</div>
+<script>
+    let i=0;
+    document.getElementById('add').addEventListener('click',function(){
+        i++;
+       const arr= document.getElementById('table-container');
+       const dec=document.getElementById('sometxt').value
+      const tr= document.createElement('tr');
+      tr.innerHTML=`
+      <td colspan="2">${i}</td>
+      <td colspan="2">${dec}</td>
+      <td colspan="2">    <button type="button" class=" bg-danger text-white p-2"class="ad1">Delete</button>
+        <button type="button" class="bg-primary text-white p-2"class="ad2">Done</button>
+        </td>
+        
+
+      `;
+      arr.appendChild(tr);
+    
+      document.getElementById('sometxt').value="";
+    })
+  document.getElementById('table-container').addEventListener('click',function(event){
+
+ if(event.target.innerText=="Delete"){
+  event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode);
+ }
+if(event.target.innerText=="Done"){
+  event.target.parentNode.parentNode.style.backgroundColor="gray";
+}
+
+  })
+  document.getElementById('table_section').addEventListener('click',function(event){
+// console.log(event.target.parentNode.parentNode);
+if(event.target.innerText=="Clear All"){
+  event.target.parentNode.removeChild(event.target.previousSibling.previousSibling);
+  // event.target.parentNode.previousSibling.remove();
+}
+  })
+</script>
+
+</body>
+</html>

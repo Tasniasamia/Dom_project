@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .section{
+          text-align: center;
+            display: block;
+        }
+        #name{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+    <input type="text"name="num"id="name"><br>
+    <span id="symbol1"><i class="fa-solid fa-plus"></i></span>
+    <span id="symbol2"><i class="fa-solid fa-minus"></i></span>
+</div>
+    <script>
+document.getElementById('symbol1').style.backgroundColor="red";
+document.getElementById('symbol1').style.display="inline-block";
+document.getElementById('symbol1').style.padding="10px";
+document.getElementById('symbol1').style.margin="5px";
+
+
+
+document.getElementById('symbol2').style.backgroundColor="yellow";
+document.getElementById('symbol2').style.display="inline-block";
+document.getElementById('symbol2').style.padding="10px";
+document.getElementById('symbol2').style.margin="5px";
+
+let count=0;
+document.getElementById('symbol1').addEventListener('click',function(){
+    count++;
+    document.getElementById('name').value=count;
+});
+document.getElementById('symbol2').addEventListener('click',function(){
+    count--;
+    document.getElementById('name').value=count;
+
+});
+
+
+
+    </script>
+
+</body>
+</html>
